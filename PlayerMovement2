@@ -28,5 +28,5 @@ public class ThirdPersonMovement : MonoBehaviour
 			controller.move(moveDir.normalized * speed * Time.deltaTime);
 		}
 	}
-
+}
 
