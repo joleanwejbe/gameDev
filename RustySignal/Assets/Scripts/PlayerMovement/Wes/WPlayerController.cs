@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WPlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    public float jumpForce;
+    public float moveSpeed = 11f;
+    public float jumpForce = 22.5f;
     public float gravityScale = 5f;
+    public float sprintAcceleration = 1.28f;
 
     //Vector three is three vectors (X,Y,Z)
     private Vector3 moveDirection;
@@ -73,6 +74,14 @@ public class WPlayerController : MonoBehaviour
             //Smoother player model rotation with directional input (wasd)
               playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation, rotateSpeed * Time.deltaTime);
 
+        }
+
+        //Sprint
+        //If the shift key is held down the movedirection will be increased by the Spring Acceleration
+        //This not only affects the running speed but will also affect jump hight (Currently set to sprintAcceleration = 1.28)
+       if(Input.GetKey(KeyCode.LeftShift))
+        {
+            charController.Move(moveDirection * sprintAcceleration * Time.deltaTime);
         }
     }
 }
