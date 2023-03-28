@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettingsButtonClick()
     {
-        SceneManager.LoadSceneAsync("Settings");
+        SceneManager.LoadSceneAsync("Settings_MM");
     }
 
     public void OnQuitButtonClick()
