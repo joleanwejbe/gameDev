@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - MM_Music
   layers:
   - Default
   - TransparentFX
