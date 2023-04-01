@@ -14,6 +14,10 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
+        //reppearing cursor
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
         //get music playing from Main Menu
         ObjectMusic = GameObject.FindWithTag("MM_Music");
         AudioSource = ObjectMusic.GetComponent<AudioSource>();
@@ -22,10 +26,6 @@ public class Settings : MonoBehaviour
         musicVolume = PlayerPrefs.GetFloat("volume");
         AudioSource.volume = musicVolume;
         volumeSlider.value = musicVolume;
-
-        //reppearing cursor
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     void Update()
