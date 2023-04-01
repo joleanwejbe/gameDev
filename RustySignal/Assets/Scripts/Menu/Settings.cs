@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
 {
-    public AudioSource AudioSource;
+    private AudioSource AudioSource;
+    public GameObject ObjectMusic;
+
     public Slider volumeSlider;
     private float musicVolume = 1f;
 
     void Start()
     {
+        //get music playing from Main Menu
+        ObjectMusic = GameObject.FindWithTag("MM_Music");
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
+
         //volume and saving it
-        AudioSource.Play();
         musicVolume = PlayerPrefs.GetFloat("volume");
         AudioSource.volume = musicVolume;
         volumeSlider.value = musicVolume;
