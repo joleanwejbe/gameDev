@@ -7,6 +7,15 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject Settings_Panel;
+
+    void Start()
+    {
+        if (Settings_Panel != null)
+        {
+            Settings_Panel.SetActive(false);
+        }
+    }
     public void OnPlayButtonClick()
     {
         SceneManager.LoadSceneAsync("New_LoadGame");
@@ -14,7 +23,18 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettingsButtonClick()
     {
-        SceneManager.LoadSceneAsync("Settings_MM");
+        if (Settings_Panel != null)
+        {
+            Settings_Panel.SetActive(true);
+        }
+    }
+
+    public void OnHomeButtonClick()
+    {
+        if (Settings_Panel != null)
+        {
+            Settings_Panel.SetActive(false);
+        }
     }
 
     public void OnQuitButtonClick()
