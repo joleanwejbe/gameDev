@@ -28,15 +28,19 @@ public class HealthManager : MonoBehaviour
 
     public void Hurt()
     {
-        currentHealth --;
+        currentHealth -= 1;
 
         //if health is zero, respawn
-        if(currentHealth < 0)
+        if(currentHealth <= 0)
         {
             currentHealth = 0;
 
             //calling the GameManager controller to respawn the character
             //GameManager.instance.Respawn();
+        }
+        else
+        {
+            WPlayerController.instance.Knockback();
         }
     }
     
