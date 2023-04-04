@@ -48,10 +48,16 @@ public class WPlayerController : MonoBehaviour
             moveDirection = moveDirection * moveSpeed;
             moveDirection.y = yStore;
 
-            //checking for jumping input
-            if (Input.GetButtonDown("Jump"))
+            //preventing the character from snapping straight to the ground if they walk off a ledge
+            if (charController.isGrounded)
             {
-                moveDirection.y = jumpForce;
+                moveDirection.y = 0f;
+
+                //checking for jumping input
+                if (Input.GetButtonDown("Jump"))
+                {
+                    moveDirection.y = jumpForce;
+                }
             }
 
             moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
