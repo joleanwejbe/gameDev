@@ -663,7 +663,7 @@ GameObject:
   - component: {fileID: 201567500}
   m_Layer: 0
   m_Name: Audio Source
-  m_TagString: Untagged
+  m_TagString: demo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -682,7 +682,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7209,6 +7209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d73fd80f25da46a65c37110cc6e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjectMusic: {fileID: 201567499}
 --- !u!1 &1813981257
 GameObject:
   m_ObjectHideFlags: 3

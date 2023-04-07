@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - MM_Music
+  - demo
   layers:
   - Default
   - TransparentFX
