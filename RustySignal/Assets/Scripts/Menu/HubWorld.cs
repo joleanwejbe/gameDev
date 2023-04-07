@@ -5,6 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class HubWorld : MonoBehaviour
 {
+    private float musicVolume;
+    private AudioSource AudioSource;
+    public GameObject ObjectMusic;
+
+    void Start()
+    {
+        ObjectMusic = GameObject.FindWithTag("demo");
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
+
+        musicVolume = PlayerPrefs.GetFloat("volume");
+        AudioSource.volume = musicVolume;
+    }
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Tab))
