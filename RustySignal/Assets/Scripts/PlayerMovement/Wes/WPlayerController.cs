@@ -31,6 +31,12 @@ public class WPlayerController : MonoBehaviour
     private float knockBackCounter;
     public Vector2 knockBackPower;
 
+    //Awake is called before everything else
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
