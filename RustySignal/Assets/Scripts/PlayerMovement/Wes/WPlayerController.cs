@@ -103,6 +103,9 @@ public class WPlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 charController.Move(moveDirection * sprintAcceleration * Time.deltaTime);
+
+            
+
             }
         }
 
@@ -126,6 +129,9 @@ public class WPlayerController : MonoBehaviour
 
         //setting values in Animator and linking it to players movement speed in the game
         anim.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
+
+        //Changes character animation to spring if left shift is pressed
+        anim.SetBool("ShiftKey", Input.GetKey(KeyCode.LeftShift));
     }
 
     public void Knockback()
