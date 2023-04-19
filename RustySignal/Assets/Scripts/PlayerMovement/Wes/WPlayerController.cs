@@ -22,6 +22,9 @@ public class WPlayerController : MonoBehaviour
     public GameObject playerModel;
     public float rotateSpeed;
 
+    //Animation Linking
+    public Animator anim;
+
     //Knocking the player back when they take damage
     public bool isKnocking;
     public float knockBackLength = 0.5f;
@@ -120,6 +123,9 @@ public class WPlayerController : MonoBehaviour
                 isKnocking = false;
             }
         }
+
+        //setting values in Animator and linking it to players movement speed in the game
+        anim.SetFloat("Speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
     }
 
     public void Knockback()
