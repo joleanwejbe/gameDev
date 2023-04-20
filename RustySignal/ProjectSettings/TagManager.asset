@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - MM_Music
   - demo
+  - Enemy
   layers:
   - Default
   - TransparentFX
