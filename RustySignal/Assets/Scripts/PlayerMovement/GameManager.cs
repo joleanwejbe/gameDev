@@ -61,4 +61,10 @@ public class GameManager : MonoBehaviour
         //After spawn point is reset bring the character game object back
         WPlayerController.instance.gameObject.SetActive(true);
     }
+
+    public void SetSpawnPoint(Vector3 newSpawnPoint)
+    {
+        respawnPosition = newSpawnPoint;
+        Debug.Log("New Spawn Point Set");
+    }
 }

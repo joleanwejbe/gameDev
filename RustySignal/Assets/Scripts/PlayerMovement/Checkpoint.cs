@@ -15,4 +15,12 @@ public class Checkpoint : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            GameManager.instance.SetSpawnPoint(transform.position);
+        }
+    }
 }
